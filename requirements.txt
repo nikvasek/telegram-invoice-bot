@@ -1,5 +1,4 @@
 supabase==1.0.3
 pdfplumber
 openai
-supabase
 python-telegram-bot==20.3
