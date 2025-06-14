@@ -54,7 +54,13 @@ def upload_pdf_to_supabase(file_path: str, file_name: str) -> str:
     import uuid
     unique_name = f"{uuid.uuid4()}_{file_name}"
     with open(file_path, "rb") as f:
-        supabase.storage.from_(STORAGE_BUCKET).upload(unique_name, f)
+        supabase.storage.from_(STORAGE_BUCKET).upload(
+            unique_name,
+            f,
+            {
+                "content-type": "application/pdf"
+            }
+        )
     return f"{SUPABASE_URL}/storage/v1/object/public/{STORAGE_BUCKET}/{unique_name}", file_name
 
 def clean_invoice_data(data: dict) -> dict:
