@@ -97,7 +97,7 @@ main_keyboard = ReplyKeyboardMarkup(
 )
 
 dashboard_keyboard = ReplyKeyboardMarkup(
-    [[KeyboardButton("Дашборд", web_app=WebAppInfo(url="https://invoice-view.lovable.app/"))]],
+    [[KeyboardButton("Дашборд", web_app=WebAppInfo(url="https://concise-invoice-viewer.lovable.app"))]],
     resize_keyboard=True
 )
 
