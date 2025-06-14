@@ -57,9 +57,7 @@ def upload_pdf_to_supabase(file_path: str, file_name: str) -> str:
         supabase.storage.from_(STORAGE_BUCKET).upload(
             unique_name,
             f,
-            {
-                "content-type": "application/pdf"
-            }
+            content_type="application/pdf"  # <-- здесь ключ content_type, не словарь
         )
     return f"{SUPABASE_URL}/storage/v1/object/public/{STORAGE_BUCKET}/{unique_name}", file_name
 
